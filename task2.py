@@ -1,66 +1,6 @@
 import click
 from random import randint
-
-
-class Margherita:
-    """Содержит информацию о пицце Маргарита"""
-
-    def __init__(self, size: str = "L"):
-        """Инициализирует пиццу"""
-        self.size = size
-
-    def change_size(self, new_size: str):
-        """Меняет размер пиццы"""
-        if new_size in ["L", "XL"]:
-            self.size = new_size
-        else:
-            print("Invalid size")
-
-    @staticmethod
-    def dict():
-        """Выводит рецепт пиццы"""
-        return {"Margherita": ["tomato sauce", "mozzarella", "tomatoes"]}
-
-
-class Pepperoni:
-    """Содержит информацию о пицце Пепперони"""
-
-    def __init__(self, size: str = "L"):
-        """Инициализирует пиццу"""
-        self.size = size
-
-    def change_size(self, new_size: str):
-        """Меняет размер пиццы"""
-        if new_size in ["L", "XL"]:
-            self.size = new_size
-        else:
-            print("Invalid size")
-
-    @staticmethod
-    def dict():
-        """Выводит рецепт пиццы"""
-        return {"Pepperoni": ["tomato sauce", "mozzarella", "pepperoni"]}
-
-
-class Hawaiian:
-    """Содержит информацию о Гавайской пицце"""
-
-    def __init__(self, size: str = "L"):
-        """Инициализирует пиццу"""
-        self.size = size
-
-    def change_size(self, new_size: str):
-        """Меняет размер пиццы"""
-        if new_size in ["L", "XL"]:
-            self.size = new_size
-        else:
-            print("Invalid size")
-
-    @staticmethod
-    def dict():
-        """Выводит рецепт пиццы"""
-        return {"Hawaiian": ["tomato sauce", "mozzarella",
-                             "chicken", "pineapples"]}
+from pizza_classes import Margherita, Pepperoni, Hawaiian
 
 
 @click.group()
@@ -140,7 +80,6 @@ def pickup(pizza):
 bake(Margherita())
 delivery_pizza(Margherita())
 pickup(Margherita())
-
 
 if __name__ == "__main__":
     cli()
